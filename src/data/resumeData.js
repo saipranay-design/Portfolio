@@ -1,10 +1,10 @@
 const resumeData = {
   name: "Guru Sai Pranay",
   title: "Senior Software Engineer | Front-End Developer",
-  email: "gurusaipranay123@gmail.com",
+  email: "gurusaipranay@gmail.com",
   phone: "+1 (814) 844-1090",
   location: "West Hartford, Connecticut",
-  linkedin: "https://linkedin.com/in/pranay-dev",
+  linkedin: "http://linkedin.com/in/m-pranay-272641262",
   github: "https://github.com/pranay-dev",
   
   introduction: "Highly skilled Senior Software Engineer with 4+ years of experience designing and developing scalable, user-friendly web and mobile applications. Expertise in modern front-end technologies including React.js, Next.js, TypeScript, and cloud deployment on AWS and Azure. Passionate about creating intuitive user experiences and driving continuous innovation.",

@@ -320,7 +320,7 @@ export default function ProjectsPage() {
             fontWeight: "600",
             cursor: "pointer",
           }}
-          onClick={() => window.location.href = `mailto:gurusaipranay123@gmail.com`}
+          onClick={() => window.location.href = `mailto:gurusaipranay@gmail.com`}
         >
           Get In Touch
         </motion.button>
