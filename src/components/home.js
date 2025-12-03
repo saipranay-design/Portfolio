@@ -114,10 +114,10 @@ export default function Home() {
             }}
           >
             {[
-              { icon: Mail, text: resumeData.email, href: `mailto:${resumeData.email}` },
+              { icon: Mail, text: resumeData.email, href: `mailto:gurusaipranay123@gmail.com` },
               { icon: Phone, text: resumeData.phone, href: `tel:${resumeData.phone}` },
               { icon: MapPin, text: resumeData.location },
-              { icon: Linkedin, text: "LinkedIn", href: resumeData.linkedin },
+              { icon: Linkedin, text: "LinkedIn", href: "https://www.linkedin.com/in/m-pranay-272641262?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" },
               { icon: Github, text: "GitHub", href: resumeData.github },
             ].map((item, idx) => (
               <motion.div
@@ -136,7 +136,29 @@ export default function Home() {
                   fontSize: "0.95rem",
                   cursor: item.href ? "pointer" : "default",
                 }}
-                onClick={() => item.href && window.open(item.href, "_blank")}
+                onClick={() => {
+                  if (item.href) {
+                    if (item.href.startsWith('mailto:')) {
+                      const email = 'gurusaipranay123@gmail.com';
+                      const options = [
+                        { name: 'Gmail', url: `https://mail.google.com/mail/?view=cm&fs=1&to=${email}` },
+                        { name: 'Outlook', url: `https://outlook.live.com/mail/0/deeplink/compose?to=${email}` },
+                        { name: 'Default Email App', url: `mailto:${email}` }
+                      ];
+                      
+                      const choice = window.confirm('Choose email provider:\n\n1. Gmail (OK)\n2. Outlook/Default (Cancel)');
+                      
+                      if (choice) {
+                        window.open(options[0].url, '_blank');
+                      } else {
+                        const useOutlook = window.confirm('Use Outlook web? (OK for Outlook, Cancel for default email app)');
+                        window.open(useOutlook ? options[1].url : options[2].url, useOutlook ? '_blank' : '_self');
+                      }
+                    } else {
+                      window.open(item.href, "_blank");
+                    }
+                  }
+                }}
               >
                 <item.icon size={18} />
                 <span>{item.text}</span>

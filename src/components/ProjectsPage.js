@@ -246,6 +246,7 @@ export default function ProjectsPage() {
                   }`,
                 }}
                 whileTap={{ scale: 0.95 }}
+                onClick={() => window.open("https://github.com/pranay-dev", "_blank")}
                 style={{
                   marginTop: "2rem",
                   padding: "1rem 2rem",
@@ -319,7 +320,7 @@ export default function ProjectsPage() {
             fontWeight: "600",
             cursor: "pointer",
           }}
-          onClick={() => window.location.href = `mailto:${resumeData.email}`}
+          onClick={() => window.location.href = `mailto:gurusaipranay123@gmail.com`}
         >
           Get In Touch
         </motion.button>

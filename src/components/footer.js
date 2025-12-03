@@ -161,11 +161,8 @@ export default function Footer() {
             { icon: Github, href: resumeData.github, color: "#333" },
             { icon: Mail, href: `mailto:${resumeData.email}`, color: "#ea4335" },
           ].map((social, idx) => (
-            <motion.a
+            <motion.div
               key={idx}
-              href={social.href}
-              target="_blank"
-              rel="noopener noreferrer"
               whileHover={{ scale: 1.2, y: -3 }}
               whileTap={{ scale: 0.9 }}
               style={{
@@ -191,9 +188,16 @@ export default function Footer() {
                 e.currentTarget.style.color = "#94a3b8";
                 e.currentTarget.style.borderColor = "rgba(255,255,255,0.1)";
               }}
+              onClick={() => {
+                if (social.icon === Mail) {
+                  window.open(`https://mail.google.com/mail/?view=cm&fs=1&to=${resumeData.email}`, '_blank');
+                } else {
+                  window.open(social.href, '_blank');
+                }
+              }}
             >
               <social.icon size={20} />
-            </motion.a>
+            </motion.div>
           ))}
         </div>
 
